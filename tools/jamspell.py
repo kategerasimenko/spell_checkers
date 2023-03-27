@@ -4,7 +4,7 @@ import spacy
 import jamspell
 from tqdm import tqdm
 
-from config import ROOT_DIR
+from .config import ROOT_DIR
 
 
 corrector = jamspell.TSpellCorrector()
@@ -15,6 +15,7 @@ tokenizer = nlp.tokenizer
 
 
 def jamspell_predict(noised_sents):
+    preds = []
     for sent in tqdm(noised_sents):
         fixed = corrector.FixFragment(sent)
         tokens = tokenizer(fixed)
