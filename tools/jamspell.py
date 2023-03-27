@@ -1,5 +1,6 @@
 import os
 
+import spacy
 import jamspell
 from tqdm import tqdm
 
@@ -8,6 +9,9 @@ from config import ROOT_DIR
 
 corrector = jamspell.TSpellCorrector()
 corrector.LoadLangModel(os.path.join(ROOT_DIR, 'jamspell', 'en.bin'))
+
+nlp = spacy.load("en_core_web_sm")
+tokenizer = nlp.tokenizer
 
 
 def jamspell_predict(noised_sents):

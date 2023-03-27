@@ -39,7 +39,10 @@ def hunspell_one_sent(sent):
         if token.whitespace_:
             final.append(token.whitespace_)
 
-    return ''.join(final)
+    return {
+        'tokens': [x for x in final if x.strip()],
+        'text': ''.join(final)
+    }
 
 
 def hunspell_predict(noised_sents):

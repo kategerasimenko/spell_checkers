@@ -39,10 +39,10 @@ for noised_sent, clean_sent in zip(noised_sents, sents):
 for i in range(5):
     print(final_clean[i], final_noised[i], sep='\n', end='\n\n')
 
-os.makedirs(os.path.join('news_synth'), exist_ok=True)
+os.makedirs(os.path.join(ROOT_DIR, 'news_synth'), exist_ok=True)
 
-with open(os.path.join('news_synth', 'clean.txt'), 'w', encoding='utf-8') as f:
+with open(os.path.join(ROOT_DIR, 'news_synth', 'clean.txt'), 'w', encoding='utf-8') as f:
     f.write('\n'.join(final_clean))
 
-with open(os.path.join('news_synth', 'noised_prob.txt'), 'w', encoding='utf-8') as f:
+with open(os.path.join(ROOT_DIR, 'news_synth', 'noised_prob.txt'), 'w', encoding='utf-8') as f:
     f.write('\n'.join(final_noised))
