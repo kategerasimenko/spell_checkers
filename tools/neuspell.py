@@ -22,5 +22,6 @@ checker._from_pretrained(ckpt_path=os.path.join(ROOT_DIR, 'neuspell-subwordbert-
 
 
 def neuspell_predict(noised_sents):
-    preds = checker.correct_strings(noised_sents)
+    fixed = checker.correct_strings(noised_sents)
+    preds = [{'tokens': fix.split(), 'text': fix} for fix in fixed]
     return preds

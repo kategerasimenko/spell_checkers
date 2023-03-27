@@ -1,13 +1,14 @@
 import os
 import sys
 import random
+from pathlib import Path
 
-from config import ROOT_DIR
 sys.path.append(os.path.join(ROOT_DIR, 'neuspell_repo'))
 
 from neuspell.noising import ProbabilisticCharacterReplacementNoiser
 
 
+ROOT_DIR = str(Path(__file__).parent)
 random.seed(42)
 
 noiser = ProbabilisticCharacterReplacementNoiser(language="english")

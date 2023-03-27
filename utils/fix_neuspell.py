@@ -1,6 +1,7 @@
 import os
+from pathlib import Path
 
-from config import ROOT_DIR
+ROOT_DIR = str(Path(__file__).parent.parent)
 
 
 filename_to_fix = os.path.join(ROOT_DIR, 'neuspell_repo', 'neuspell', 'off_the_shelf', '__init__.py')

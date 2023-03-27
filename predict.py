@@ -1,8 +1,10 @@
 import os
+from pathlib import Path
 
-from config import ROOT_DIR
 from tools import TOOLS
 
+
+ROOT_DIR = str(Path(__file__).parent)
 
 with open(os.path.join(ROOT_DIR, 'news_synth', 'clean.txt'), encoding='utf-8') as f:
     clean = f.read().strip().split('\n')
