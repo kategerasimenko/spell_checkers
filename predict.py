@@ -7,7 +7,7 @@ from tools import TOOLS
 
 ROOT_DIR = str(Path(__file__).parent)
 
-with open(os.path.join(ROOT_DIR, 'news_synth', 'noised_prob.txt'), encoding='utf-8') as f:
+with open(os.path.join(ROOT_DIR, 'news_synth', 'noised_prob.jsonl'), encoding='utf-8') as f:
     noised = [json.loads(x)['text'] for x in f.read().strip().split('\n')]
 
 os.makedirs(os.path.join(ROOT_DIR, 'preds'), exist_ok=True)
